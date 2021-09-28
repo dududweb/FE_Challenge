@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="common.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Tip calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body> 
+  <div class="title">
+    <h2 id="cal_title">SPLI<br>TTER</h2>
+  </div>
+  <section id="contents">
+    <div class="box_wrap">
+      <div class="leftbox">
+        <ul class="list">
+          <li class="bill_title">Bill</li>
+            <input type="text" class="input_type number" id="input_cost" />
+          <li class="bill_title">Select Tip %</li>
+            <div class="btn_wrap">
+              <button class="btn btn_green tip-5per">5%</button>
+              <button class="btn btn_green tip-10per">10%</button>
+              <button class="btn btn_green tip-15per">15%</button>
+              <button class="btn btn_green tip-25per">25%</button>
+              <button class="btn btn_green tip-50er">50%</button>
+              <button class="btn btn_green tip-75per">75%</button>
+            </div>  
+          <li class="bill_title">Number of People</li>
+            <input type="text" class="input_type man" id="input_num" />
+        </ul>
+      </div>  
+      <div class="rightbox">
+          <div class="result-box">
+            <div class="result-box-wrap">
+            <table border="0" class="total-table">
+              <tr>
+                <td class="total-table-title">Tip Amount</td>
+                <td class="person-fee" id="tip-person-fee" rowspan="2">$4.27</td>
+              </tr>
+              <tr>
+                <td class="total-table-sub">/person</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td class="total-table-title">Total</td>
+                <td class="person-fee" id="total-person-fee" rowspan="2">$32.79</td>
+              </tr>
+              <tr>
+                <td class="total-table-sub">/person</td>
+                <td></td>
+              </tr>
+            </table>
+            <div class="reset-box">
+              <button class="btn-reset btn">RESET</button>
+            </div>
+          </div>
+          </div>
+        </div>
+    </div>
+  </section>
+  <script>
+    var cost = document.getElementById('input_cost').value;
+    var num  = document.getElementById('input_num').value;
+
+  </script>
+
+
+
+  <!-- Bill
+
+  Select Tip %
+  5%
+  10%
+  15%
+  25%
+  50%
+  Custom
+
+  Number of People
+
+  Tip Amount
+  / person
+
+  Total
+  / person
+
+  Reset -->
+  
+ 
+</body>
+</html>
