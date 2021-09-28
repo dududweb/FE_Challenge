@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+
+</head>
+<body>
+  
+
+  <div class="contents">
+    <div class="article_wrap">
+      <div class="article_left">
+        <div class="img_wrap">
+          <div class="img1"></div>
+          <div class="img2"></div>
+          <div class="img3"></div>
+        </div>
+      </div>
+      <div class="article_right">
+        <h1 class="title">FAQ</h1>
+        <section id="faq">
+          <div class="panel-question active">
+            <div class="panel-heading">
+              Lorem ipsum dolor sit?
+              <img class="arrow" src="./images/icon-arrow-down.svg" alt=""> 
+            </div>
+            <div class="panel-body" id="thisone">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad aliquid voluptate fugit quaerat non molestiae quo magni soluta minima corporis! Soluta, ipsa et.</p>
+            </div>
+          </div>
+          
+          <div class="panel-question">
+            <div class="panel-heading">
+             Lorem ipsum dolor sit?
+             <img class="arrow" src="./images/icon-arrow-down.svg" alt=""> 
+            </div>
+            <div class="panel-body">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad aliquid voluptate fugit quaerat non molestiae quo magni soluta minima corporis! Soluta, ipsa et.</p>
+            </div>
+          </div>
+          
+          <div class="panel-question">
+            <div class="panel-heading">
+              Lorem ipsum dolor sit?
+              <img class="arrow" src="./images/icon-arrow-down.svg" alt=""> 
+            </div>
+            <div class="panel-body">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad aliquid voluptate fugit quaerat non molestiae quo magni soluta minima corporis! Soluta, ipsa et.</p>
+
+            </div>
+          </div>
+
+          <div class="panel-question">
+            <div class="panel-heading">
+              Lorem ipsum dolor sit?
+              <img class="arrow" src="./images/icon-arrow-down.svg" alt=""> 
+            </div>
+            <div class="panel-body">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad aliquid voluptate fugit quaerat non molestiae quo magni soluta minima corporis! Soluta, ipsa et.</p>
+            </div>
+          </div>
+
+          <div class="panel-question">
+            <div class="panel-heading">
+              Lorem ipsum dolor sit?
+              <img class="arrow" src="./images/icon-arrow-down.svg" alt=""> 
+            </div>
+            <div class="panel-body">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad aliquid voluptate fugit quaerat non molestiae quo magni soluta minima corporis! Soluta, ipsa et.</p>
+            </div>
+        </div>
+        </section>
+
+        <script>  
+
+
+          var heading = document.getElementsByClassName('panel-heading'),
+              question = document.getElementsByClassName('panel-question'),
+              answer = document.getElementsByClassName('panel-body');
+              
+//제목을 클릭하면 할일
+
+          for(var i = 0; i<heading.length; i++ ){
+            heading[i].addEventListener('click', function(e){
+              for(var x=0; x < question.length; x++){
+                 question[x].classList.remove('active');
+                 e.target.parentNode.classList.add('active');  // 어떤헤딩을 클릭한건지 알 수 있다.
+                 activateBody();
+              }
+            });
+          }
+          function activateBody(){
+            for(var j = 0; j<answer.length; j++){
+              answer[j].style.display = 'none';
+              var activePanel = document.querySelector('.panel-question.active .panel-body');
+              activePanel.style.display = 'block';
+            }
+          }
+          activateBody();
+
+        </script>
+      </div>
+    </div>
+ </div> 
+ 
+  
+
+ 
+
+</body>
+</html>
