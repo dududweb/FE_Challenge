@@ -30,12 +30,12 @@
             <input type="text" class="input_type number" id="input_cost" />
           <li class="bill_title">Select Tip %</li>
             <div class="btn_wrap">
-              <button class="btn btn_green tip-5per">5%</button>
-              <button class="btn btn_green tip-10per">10%</button>
-              <button class="btn btn_green tip-15per">15%</button>
-              <button class="btn btn_green tip-25per">25%</button>
-              <button class="btn btn_green tip-50er">50%</button>
-              <button class="btn btn_green tip-75per">75%</button>
+              <button class="btn btn_green" id="tip-per0.05">5%</button>
+              <button class="btn btn_green" id="tip-per0.10">10%</button>
+              <button class="btn btn_green" id="tip-per0.15">15%</button>
+              <button class="btn btn_green" id="tip-per0.20">20%</button>
+              <button class="btn btn_green" id="tip-per0.25">25%</button>
+              <button class="btn btn_green" id="tip-per0.30">30%</button>
             </div>  
           <li class="bill_title">Number of People</li>
             <input type="text" class="input_type man" id="input_num" />
@@ -47,7 +47,7 @@
             <table border="0" class="total-table">
               <tr>
                 <td class="total-table-title">Tip Amount</td>
-                <td class="person-fee" id="tip-person-fee" rowspan="2">$4.27</td>
+                <td class="person-fee" id="tip-person-fee" rowspan="2">-</td>
               </tr>
               <tr>
                 <td class="total-table-sub">/person</td>
@@ -55,7 +55,7 @@
               </tr>
               <tr>
                 <td class="total-table-title">Total</td>
-                <td class="person-fee" id="total-person-fee" rowspan="2">$32.79</td>
+                <td class="person-fee" id="total-person-fee" rowspan="2">-</td>
               </tr>
               <tr>
                 <td class="total-table-sub">/person</td>
@@ -70,34 +70,23 @@
         </div>
     </div>
   </section>
+  
   <script>
-    var cost = document.getElementById('input_cost').value;
-    var num  = document.getElementById('input_num').value;
+  
+    for(let i = 0.05; i<0.31; i+=0.05){
+    document.getElementById('tip-per'+i).addEventListener('click', function(){
+        
+          let cost = parseInt(document.getElementById('input_cost').value);
+          let num  = parseInt(document.getElementById('input_num').value);
+          let tip = cost*i;
+          document.getElementById('tip-person-fee').innerHTML = '$'+tip/num;
+          document.getElementById('total-person-fee').innerHTML = '$'+(cost+tip)/num;
+          console.log(Math.round(i)*10/10);
+          console.log(tip);
+
+      })
+    }
 
   </script>
-
-
-
-  <!-- Bill
-
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
-
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset -->
-  
- 
 </body>
 </html>
